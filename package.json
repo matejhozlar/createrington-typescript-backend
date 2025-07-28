@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "node --loader ts-node/esm server.ts"
+    "dev": "node --no-warnings --loader ts-node/esm server.ts",
+    "env-gen": "node --no-warnings --loader ts-node/esm scripts/env/generateRequiredEnvVars.ts",
+    "env-find": "node --no-warnings --loader ts-node/esm scripts/env/findEnvUsage.ts"
   },
   "repository": {
     "type": "git",
@@ -34,6 +36,7 @@
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
+    "fast-glob": "^3.3.3",
     "jsonwebtoken": "^9.0.2",
     "luxon": "^3.7.1",
     "pg": "^8.16.3",
