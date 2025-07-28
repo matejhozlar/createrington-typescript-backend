@@ -8,11 +8,17 @@ dotenv.config();
  * PostgreSQL database pool instance using environment variables.
  *
  * Environment Variables Used:
- * - DB_USER: PostgreSQL username
- * - DB_HOST: PostgreSQL host (e.g., localhost or remote)
- * - DB_DATABASE: Name of the database
- * - DB_PASSWORD: Password for the database user
- * - DB_PORT: Port PostgreSQL is running on (usually 5432)
+ * @env {string} DB_USER - The PostgreSQL username
+ * @env {string} DB_HOST - The PostgreSQL host (e.g. localhost or remote)
+ * @env {string} DB_DATABASE - The name of the database
+ * @env {string} DB_PASSWORD - The database user's password
+ * @env {string|number} DB_PORT - The port PostgreSQL is running on
+ *
+ * Connection Options:
+ * - idleTimeoutMillis: 30000 (30 seconds)
+ * - connectionTimeoutMillis: 10000 (10 seconds)
+ *
+ * @type {import('pg').Pool}
  */
 const db = new Pool({
   user: process.env.DB_USER,
@@ -24,7 +30,6 @@ const db = new Pool({
   connectionTimeoutMillis: 10000,
 });
 
-// Try to connect immediately and log the result
 (async (): Promise<void> => {
   try {
     await db.query("SELECT 1");
