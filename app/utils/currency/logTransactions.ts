@@ -7,7 +7,7 @@ interface TransactionData {
   amount: number;
   from_uuid?: string | null;
   to_uuid?: string | null;
-  denomination?: string | null;
+  denomination?: number | null;
   count?: number | null;
   balance_after?: number | null;
 }

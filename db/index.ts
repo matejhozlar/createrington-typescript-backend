@@ -1,6 +1,6 @@
 import { Pool } from "pg";
 import dotenv from "dotenv";
-import logger from "../logger";
+import logger from "../logger.ts";
 
 dotenv.config();
 

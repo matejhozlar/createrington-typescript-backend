@@ -1,6 +1,6 @@
 import dotenv from "dotenv"; // Loads environment variables from .env
-import logger from "../../logger"; // Your custom logger instance
-import REQUIRED_VARS from "./vars/requiredVars"; // Array of required env variable names
+import logger from "../../logger.ts"; // Your custom logger instance
+import REQUIRED_VARS from "./vars/requiredVars.ts"; // Array of required env variable names
 
 dotenv.config();
 

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import logger from "../../logger"; // Custom logger instance
+import logger from "../../logger.ts"; // Custom logger instance
 
 // Allowed IPs pulled from environment variables
 const allowedIp = process.env.ALLOWED_IP_ADDRESS;
